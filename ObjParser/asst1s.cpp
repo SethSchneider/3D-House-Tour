@@ -1517,46 +1517,6 @@ static void keyboard( unsigned char key, int x, int y )
 			model_view_start = RotateY(-90)*model_view_start;
 		}
 		break;
-	case 'r': case 'R':
-		copymv = model_view_start;
-		model_view_start = Translate(0, -6.0*factor, 0)*model_view_start;
-		model_view_start = RotateX(-90)*model_view_start;
-		if (detectCollisions(key)) {
-			model_view_start = copymv;
-		}
-		else{
-			model_view_start = RotateX(90)*model_view_start;
-		}
-		break;
-	case 'f': case 'F':
-		copymv = model_view_start;
-		model_view_start = Translate(0, 6.0*factor, 0)*model_view_start;
-		model_view_start = RotateX(90)*model_view_start;
-		if (detectCollisions(key)) {
-			model_view_start = copymv;
-		}
-		else{
-			model_view_start = RotateX(-90)*model_view_start;
-		}
-		break;
-	case 'j': case 'J':
-		model_view_start = RotateY(-0.5*factor)*model_view_start;
-		break;
-	case 'l': case 'L':
-		model_view_start = RotateY(0.5*factor)*model_view_start;
-		break;
-	case 'u': case 'U':
-		model_view_start = RotateZ(-1.5*factor)*model_view_start;
-		break;
-	case 'o': case 'O':
-		model_view_start = RotateZ(1.5*factor)*model_view_start;
-		break;
-	case 'i': case 'I':
-		model_view_start = RotateX(-1.5*factor)*model_view_start;
-		break;
-	case 'k': case 'K':
-		model_view_start = RotateX(1.5*factor)*model_view_start;
-		break;
 	case '[':
 		backgroundColor = color4(0.0, 0.0, 0.14, 1.0);
 		glClearColor(backgroundColor.x, backgroundColor.y, backgroundColor.z, 1.0);
